@@ -7,3 +7,19 @@ class User(models.Model):
     bio =  models.TextField()
     email = models.EmailField()
     birthday = models.DateField()
+
+    def __str__(self):
+        return self.name
+    
+class Category(models.Model):
+    name = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.name
+    
+class Product(models.Model):
+    name = models.CharField(max_length=100)
+    price = models.DecimalField(max_digits=10, decimal_places=2)
+    description = models.TextField()
+    Category = models.ForeignKey(Category, on_delete=models.DO_NOTHING)
+    
