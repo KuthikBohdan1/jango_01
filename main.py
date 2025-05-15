@@ -4,7 +4,7 @@ import django
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "myproject.settings")
 django.setup()
 
-from lesson.models import User
+from lesson.models import User, Category, Product, Student, Course
 
 # User(
 #     name = "piter",
@@ -39,3 +39,23 @@ from lesson.models import User
 # for user in users:
 #     print(user.name)
 
+
+# new_category = Category(name = "Diary products")
+# new_category.save()
+
+# new_product = Product(
+#     name = "Milk",
+#     price = 22.5,
+#     description = "Milk is a white liquid produced by the mammary glands of mammals.",
+#     Category = new_category
+
+# ).save()
+        
+
+# product = Product.objects.filter(id=1).first()
+# print(product.name)
+# print(product.Category.name)
+
+
+catategory = Category.objects.get(id=2)
+print(catategory.product_set)
