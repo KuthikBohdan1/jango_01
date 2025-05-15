@@ -57,5 +57,10 @@ from lesson.models import User, Category, Product, Student, Course
 # print(product.Category.name)
 
 
-catategory = Category.objects.get(id=2)
-print(catategory.product_set)
+# catategory = Category.objects.get(id=2)
+# print(catategory.product_set)
+
+# Student(name="Some Student").save()
+
+
+Course(title="some_course").save() 
